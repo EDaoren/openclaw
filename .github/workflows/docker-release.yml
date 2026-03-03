@@ -90,6 +90,8 @@ jobs:
           labels: ${{ steps.labels.outputs.value }}
           provenance: false
           push: true
+          build-args: |
+            OPENCLAW_DOCKER_APT_PACKAGES=python3 python3-venv python3-pip
 
   # Build arm64 image
   build-arm64:
@@ -172,6 +174,8 @@ jobs:
           labels: ${{ steps.labels.outputs.value }}
           provenance: false
           push: true
+          build-args: |
+            OPENCLAW_DOCKER_APT_PACKAGES=python3 python3-venv python3-pip
 
   # Create multi-platform manifest
   create-manifest:
